@@ -2,7 +2,7 @@
 // VB Notes - Edit Note
 // ========================================
 
-const BASE_URL = "http://localhost:8082";
+const BASE_URL = "https://notes-app-b63a.onrender.com";
 
 function getEditNoteId() {
     let urlParams = new URLSearchParams(window.location.search);
