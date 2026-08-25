@@ -2,7 +2,7 @@
 // VB Notes - Login
 // =========================================
 
-const BASE_URL = "http://localhost:8082";
+const BASE_URL = "https://notes-app-b63a.onrender.com";
 
 // Password Show / Hide
 $("#togglePassword").click(function () {
