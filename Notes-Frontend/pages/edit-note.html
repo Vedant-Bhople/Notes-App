@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Note | VB Notes</title>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/notes.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ===========================
+         SIDEBAR
+    ============================ -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-note-sticky"></i>
+            <h3>VB Notes</h3>
+        </div>
+
+        <ul>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="active">
+                <a href="all-notes.html">
+                    <i class="fa fa-book"></i> All Notes
+                </a>
+            </li>
+            <li>
+                <a href="add-note.html">
+                    <i class="fa fa-plus-circle"></i> Add Note
+                </a>
+            </li>
+            <li>
+                <a href="pinned.html">
+                    <i class="fa fa-thumb-tack"></i> Pinned
+                </a>
+            </li>
+            <li>
+                <a href="favourite.html">
+                    <i class="fa fa-star"></i> Favourite
+                </a>
+            </li>
+            <li>
+                <a href="archived.html">
+                    <i class="fa fa-archive"></i> Archived
+                </a>
+            </li>
+            <li>
+                <a href="trash.html">
+                    <i class="fa fa-trash"></i> Trash
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===========================
+         MAIN CONTENT
+    ============================ -->
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+        <nav class="navbar navbar-default topbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3><i class="fa fa-edit text-primary"></i> Edit Note</h3>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fa fa-user-circle"></i>
+                            <span id="topbarUserName">User</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+                    <div class="panel panel-default form-card" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-top: 10px;">
+                        <div class="panel-heading" style="background: #2563eb; color: white; border-radius: 12px 12px 0 0; padding: 18px 24px;">
+                            <h3 class="panel-title" style="font-size: 18px; font-weight: 600;">
+                                <i class="fa fa-pencil-alt"></i> Modify Note
+                            </h3>
+                        </div>
+
+                        <div class="panel-body" style="padding: 25px 30px;">
+                            <form id="editForm">
+
+                                <div class="form-group">
+                                    <label style="font-weight: 600;">Title <span class="text-danger">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="title"
+                                        class="form-control input-lg"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-weight: 600;">Content <span class="text-danger">*</span></label>
+                                    <textarea
+                                        id="content"
+                                        rows="6"
+                                        class="form-control"
+                                        required></textarea>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: 600;">Category</label>
+                                            <input
+                                                type="text"
+                                                id="category"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label style="font-weight: 600;">Color Theme</label>
+                                            <select id="color" class="form-control">
+                                                <option value="Blue">Blue</option>
+                                                <option value="Red">Red</option>
+                                                <option value="Green">Green</option>
+                                                <option value="Yellow">Yellow</option>
+                                                <option value="Purple">Purple</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-weight: 600;">Priority</label>
+                                    <select id="priority" class="form-control">
+                                        <option value="LOW">LOW</option>
+                                        <option value="MEDIUM">MEDIUM</option>
+                                        <option value="HIGH">HIGH</option>
+                                    </select>
+                                </div>
+
+                                <hr style="margin: 25px 0 20px;">
+
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <button type="submit" class="btn btn-success btn-lg">
+                                            <i class="fa fa-save"></i> Update Note
+                                        </button>
+                                        <a href="all-notes.html" class="btn btn-default btn-lg" style="margin-left: 10px;">
+                                            Cancel
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/edit-note.js"></script>
+
+</body>
+</html>

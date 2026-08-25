@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | VB Notes</title>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/notes.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ===========================
+         SIDEBAR
+    ============================ -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-note-sticky"></i>
+            <h3>VB Notes</h3>
+        </div>
+
+        <ul>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="all-notes.html">
+                    <i class="fa fa-book"></i> All Notes
+                </a>
+            </li>
+            <li>
+                <a href="add-note.html">
+                    <i class="fa fa-plus-circle"></i> Add Note
+                </a>
+            </li>
+            <li>
+                <a href="pinned.html">
+                    <i class="fa fa-thumb-tack"></i> Pinned
+                </a>
+            </li>
+            <li>
+                <a href="favourite.html">
+                    <i class="fa fa-star"></i> Favourite
+                </a>
+            </li>
+            <li>
+                <a href="archived.html">
+                    <i class="fa fa-archive"></i> Archived
+                </a>
+            </li>
+            <li>
+                <a href="trash.html">
+                    <i class="fa fa-trash"></i> Trash
+                </a>
+            </li>
+            <li class="active">
+                <a href="profile.html">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===========================
+         MAIN CONTENT
+    ============================ -->
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+        <nav class="navbar navbar-default topbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3><i class="fa fa-user-circle text-primary"></i> User Profile</h3>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+                    <div class="panel panel-default profile-card" style="border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-top: 10px;">
+                        
+                        <div class="profile-header-banner" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); padding: 40px 20px 30px; text-align: center; color: white;">
+                            <img
+                                src="../assets/images/user.png"
+                                alt="User Avatar"
+                                class="img-circle profile-avatar"
+                                style="width: 110px; height: 110px; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); object-fit: cover; background: #fff;">
+                            <h2 id="profileName" style="margin-top: 15px; font-weight: 700; font-size: 24px;">User</h2>
+                            <p id="profileEmail" style="opacity: 0.85; font-size: 14px; margin-bottom: 0;">user@example.com</p>
+                        </div>
+
+                        <div class="panel-body" style="padding: 30px;">
+                            <table class="table table-bordered profile-table" style="margin-bottom: 25px;">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 35%; background: #f8fafc; font-weight: 600;">Full Name</th>
+                                        <td id="fullName">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #f8fafc; font-weight: 600;">Email Address</th>
+                                        <td id="email">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #f8fafc; font-weight: 600;">Mobile Number</th>
+                                        <td id="mobile">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #f8fafc; font-weight: 600;">Account Status</th>
+                                        <td><span id="status" class="label label-success" style="font-size: 12px; padding: 4px 10px;">ACTIVE</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="text-center" style="display: flex; justify-content: center; gap: 15px;">
+                                <a href="dashboard.html" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-home"></i> Back to Dashboard
+                                </a>
+                                <button class="btn btn-danger btn-lg" onclick="logout()">
+                                    <i class="fa fa-sign-out"></i> Logout
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/profile.js"></script>
+
+</body>
+</html>

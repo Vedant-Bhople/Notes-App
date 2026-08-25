@@ -1,0 +1,508 @@
+/* ==========================================
+   VB NOTES - Modern Notes Stylesheet
+   notes.css
+   ========================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   WRAPPER & SIDEBAR
+   ========================================== */
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: #1e293b;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo i {
+    font-size: 38px;
+    color: #f59e0b;
+    margin-bottom: 8px;
+}
+
+.logo h3 {
+    margin: 6px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar ul li a i {
+    width: 24px;
+    font-size: 16px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    color: #fff;
+    background: #334155;
+}
+
+.sidebar ul li.active a {
+    color: #fff;
+    background: #2563eb;
+    font-weight: 600;
+}
+
+/* ==========================================
+   MAIN CONTENT & TOPBAR
+   ========================================== */
+
+.main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 0 0 40px;
+    min-height: 100vh;
+}
+
+.topbar {
+    margin: 0 0 25px;
+    border-radius: 0;
+    border: none;
+    background: #fff;
+    padding: 12px 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.topbar h3 {
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.topbar .nav > li > a {
+    color: #475569;
+    font-weight: 500;
+    padding: 8px 12px;
+}
+
+.topbar .nav > li > a:hover {
+    color: #2563eb;
+    background: transparent;
+}
+
+/* ==========================================
+   HEADER BANNER
+   ========================================== */
+
+.notes-header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.title-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 22px;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.page-title p {
+    margin: 4px 0 0;
+    opacity: 0.85;
+    font-size: 13px;
+}
+
+/* ==========================================
+   SEARCH BAR
+   ========================================== */
+
+#searchBox {
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    padding-left: 18px;
+    box-shadow: none;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+#searchBox:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ==========================================
+   NOTE CARDS
+   ========================================== */
+
+.note-grid-item {
+    margin-bottom: 24px;
+}
+
+.note-card {
+    background: #fff;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.note-card.is-pinned {
+    border: 2px solid #f59e0b;
+}
+
+/* ==========================================
+   CARD COLOR THEMES
+   ========================================== */
+
+/* Blue (Default) */
+.note-card.color-blue .panel-heading {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
+}
+
+/* Red */
+.note-card.color-red .panel-heading {
+    background: linear-gradient(135deg, #b91c1c, #ef4444) !important;
+}
+
+/* Green */
+.note-card.color-green .panel-heading {
+    background: linear-gradient(135deg, #047857, #10b981) !important;
+}
+
+/* Yellow */
+.note-card.color-yellow .panel-heading {
+    background: linear-gradient(135deg, #b45309, #f59e0b) !important;
+}
+
+/* Purple */
+.note-card.color-purple .panel-heading {
+    background: linear-gradient(135deg, #6d28d9, #8b5cf6) !important;
+}
+
+/* ==========================================
+   CARD HEADER
+   ========================================== */
+
+.note-header {
+    color: #fff !important;
+    padding: 14px 18px;
+    border: none !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.note-title-icon {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.note-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.note-time {
+    font-size: 11px;
+    opacity: 0.85;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+/* ==========================================
+   CARD BODY
+   ========================================== */
+
+.note-body {
+    padding: 16px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+    margin-bottom: 14px;
+    min-height: 55px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================================
+   NOTE TAGS & BADGES
+   ========================================== */
+
+.note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.note-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.category-badge {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.priority-high {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.priority-medium {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.priority-low {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.color-badge {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.color-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-dot-blue { background: #3b82f6; }
+.color-dot-red { background: #ef4444; }
+.color-dot-green { background: #10b981; }
+.color-dot-yellow { background: #f59e0b; }
+.color-dot-purple { background: #8b5cf6; }
+
+.note-status-badges {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.note-status-badges .label {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   CARD FOOTER & ACTIONS
+   ========================================== */
+
+.note-footer {
+    background: #f8fafc !important;
+    border-top: 1px solid #f1f5f9 !important;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    transform: scale(1.08);
+}
+
+.btn-action {
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty {
+    background: #fff;
+    border-radius: 14px;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.empty i {
+    font-size: 48px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.empty h3 {
+    margin: 8px 0 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.empty p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 991px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 0 30px;
+    }
+    .notes-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .page-title {
+        flex-direction: column;
+        text-align: center;
+    }
+    .btn-block-mobile {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

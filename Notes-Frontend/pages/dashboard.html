@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | VB Notes</title>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-note-sticky"></i>
+            <h3>VB Notes</h3>
+        </div>
+
+        <ul>
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="all-notes.html">
+                    <i class="fa fa-book"></i> All Notes
+                </a>
+            </li>
+            <li>
+                <a href="add-note.html">
+                    <i class="fa fa-plus-circle"></i> Add Note
+                </a>
+            </li>
+            <li>
+                <a href="pinned.html">
+                    <i class="fa fa-thumb-tack"></i> Pinned
+                </a>
+            </li>
+            <li>
+                <a href="favourite.html">
+                    <i class="fa fa-star"></i> Favourite
+                </a>
+            </li>
+            <li>
+                <a href="archived.html">
+                    <i class="fa fa-archive"></i> Archived
+                </a>
+            </li>
+            <li>
+                <a href="trash.html">
+                    <i class="fa fa-trash"></i> Trash
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <div class="main-content">
+
+        <nav class="navbar navbar-default topbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebarMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h3>Dashboard</h3>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="profile.html" title="View Profile">
+                            <i class="fa fa-user-circle"></i>
+                            <span id="userName">User</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- =========================
+             WELCOME SECTION
+        ========================== -->
+        <div class="container-fluid">
+
+            <div class="welcome-card">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 id="welcomeName">Welcome 👋</h2>
+                        <p>Manage your notes efficiently and stay productive.</p>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <a href="add-note.html" class="btn btn-primary btn-lg">
+                            <i class="fa fa-plus-circle"></i> Add Note
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================
+                 STATISTICS (CLICKABLE)
+            ========================== -->
+            <div class="row stats-row">
+
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="stats-card stats-clickable" onclick="window.location.href='all-notes.html'" title="View All Notes">
+                        <i class="fa fa-book text-primary"></i>
+                        <h2 id="totalNotes">0</h2>
+                        <p>Total Notes</p>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="stats-card stats-clickable" onclick="window.location.href='pinned.html'" title="View Pinned Notes">
+                        <i class="fa fa-thumb-tack text-warning"></i>
+                        <h2 id="pinnedNotes">0</h2>
+                        <p>Pinned</p>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="stats-card stats-clickable" onclick="window.location.href='favourite.html'" title="View Favourite Notes">
+                        <i class="fa fa-star text-success"></i>
+                        <h2 id="favNotes">0</h2>
+                        <p>Favourite</p>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <div class="stats-card stats-clickable" onclick="window.location.href='trash.html'" title="View Trash">
+                        <i class="fa fa-trash text-danger"></i>
+                        <h2 id="trashNotes">0</h2>
+                        <p>Trash</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- =========================
+                 RECENT NOTES
+            ========================== -->
+            <div class="panel panel-default notes-panel">
+                <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 class="panel-title" style="margin: 0; font-weight: 600;">Recent Notes</h3>
+                    <a href="all-notes.html" class="btn btn-default btn-xs" style="color: #333;">View All <i class="fa fa-arrow-right"></i></a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th style="width: 110px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentNotes">
+                            <tr>
+                                <td colspan="5" class="text-center">Loading notes...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

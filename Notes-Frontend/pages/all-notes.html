@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Notes | VB Notes</title>
+
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/notes.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ===========================
+         SIDEBAR
+    ============================ -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-note-sticky"></i>
+            <h3>VB Notes</h3>
+        </div>
+
+        <ul>
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="active">
+                <a href="all-notes.html">
+                    <i class="fa fa-book"></i> All Notes
+                </a>
+            </li>
+            <li>
+                <a href="add-note.html">
+                    <i class="fa fa-plus-circle"></i> Add Note
+                </a>
+            </li>
+            <li>
+                <a href="pinned.html">
+                    <i class="fa fa-thumb-tack"></i> Pinned
+                </a>
+            </li>
+            <li>
+                <a href="favourite.html">
+                    <i class="fa fa-star"></i> Favourite
+                </a>
+            </li>
+            <li>
+                <a href="archived.html">
+                    <i class="fa fa-archive"></i> Archived
+                </a>
+            </li>
+            <li>
+                <a href="trash.html">
+                    <i class="fa fa-trash"></i> Trash
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===========================
+         MAIN CONTENT
+    ============================ -->
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+        <nav class="navbar navbar-default topbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3>All Notes</h3>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fa fa-user-circle"></i>
+                            <span id="topbarUserName">User</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-8 col-sm-7 col-xs-12">
+                    <div class="form-group" style="position: relative; margin-bottom: 10px;">
+                        <input
+                            type="text"
+                            id="searchBox"
+                            class="form-control input-lg"
+                            placeholder="Search your notes by title or content...">
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-5 col-xs-12 text-right">
+                    <a href="add-note.html" class="btn btn-primary btn-lg btn-block-mobile">
+                        <i class="fa fa-plus-circle"></i> Add Note
+                    </a>
+                </div>
+            </div>
+
+            <!-- NOTES CONTAINER -->
+            <div class="row" id="notesContainer">
+                <!-- Dynamically loaded via notes.js -->
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Notes JS -->
+<script src="../assets/js/notes.js"></script>
+
+</body>
+</html>

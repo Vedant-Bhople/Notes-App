@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login | VB Notes</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid login-container">
+
+    <div class="row">
+
+        <!-- Left Section -->
+        <div class="col-md-7 hidden-sm hidden-xs left-panel">
+
+            <div class="overlay">
+
+                <div class="brand">
+
+                    <i class="fa-solid fa-note-sticky"></i>
+
+                    <h1>VB Notes</h1>
+
+                    <p>
+                        Organize your thoughts.
+                        <br>
+                        Access your notes anywhere.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-xs-12 col-sm-12 col-md-5 right-panel">
+
+            <div class="login-card">
+
+                <div class="text-center">
+
+                    <i class="fa-solid fa-user-circle login-icon"></i>
+
+                    <h2>Welcome Back</h2>
+
+                    <p>Please login to continue</p>
+
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="Enter Email"
+                                required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Password</label>
+
+                        <div class="input-group">
+
+                            <input
+                                    type="password"
+                                    id="password"
+                                    class="form-control"
+                                    placeholder="Enter Password"
+                                    required>
+
+                            <span class="input-group-addon"
+                                  id="togglePassword">
+
+                                <i class="fa fa-eye"></i>
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                            type="submit"
+                            class="btn btn-primary btn-block login-btn">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+                <hr>
+
+                <div class="text-center">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+
+                        Register
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/login.js"></script>
+
+
+</body>
+</html>
