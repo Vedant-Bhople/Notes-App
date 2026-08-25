@@ -2,7 +2,7 @@
 // VB Notes - Dashboard
 // ========================================
 
-const BASE_URL = "http://localhost:8082";
+const BASE_URL = "https://notes-app-b63a.onrender.com";
 
 function getUserId() {
     let userId = localStorage.getItem("userId");
